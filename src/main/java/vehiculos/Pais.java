@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Pais {
 	private String nombre;
 	public static ArrayList<Pais> paises = new ArrayList<>();
-	public int nvehiculos;
+	public int nfabricantes;
 
 	public Pais(String nombre) {
 		this.nombre = nombre;
@@ -13,15 +13,16 @@ public class Pais {
 	}
 	
 	public static Pais paisMasVendedor() {
-		Pais max = null;
+		int max = 0;
 		int aux = 0;
-		for(Pais p: paises) {
-			if(p.nvehiculos > aux) {
-				aux = p.nvehiculos;
-				max = p;
+		for(int i = 0; i < paises.size(); i++) {
+			if(paises.get(i).nfabricantes > aux) {
+				aux = paises.get(i).nfabricantes;
+				max = i;
 			}
 		}
-		return max;
+		
+		return paises.get(max);
 	}
 
 	public String getNombre() {
