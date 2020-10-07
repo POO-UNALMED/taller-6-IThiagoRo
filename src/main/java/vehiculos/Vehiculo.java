@@ -21,6 +21,7 @@ public class Vehiculo {
 		this.traccion = traccion;
 		this.fabricante = fabricante;
 		cantidadVehiculos++;
+		fabricante.nvehiculos++;
 	}
 	
 	public void vehiculosPorTipo() {
@@ -95,7 +96,7 @@ public class Vehiculo {
 		return cantidadVehiculos;
 	}
 
-	public static void setcantidadVehiculos(int cantidadVehiculos) {
+	public static void setCantidadVehiculos(int cantidadVehiculos) {
 		Vehiculo.cantidadVehiculos = cantidadVehiculos;
 	}
 	
